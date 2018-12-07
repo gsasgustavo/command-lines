@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comandos para Configurações de Sistemas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style rel="stylesheet" type="text/css">
+        body {
+            background-color: #555;
+        }
+        h2{
+            width: 800px;
+            padding: 12px 0;
+            font-family: sans-serif;
+            font-size: 18px;
+            text-align: center;
+            color: #333;
+            background-color: whitesmoke;
+        }
+        .accordion {
+            background-color: #999;
+            color: #111;
+            cursor: pointer;
+            padding: 15px 15px;
+            width: 800px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-family: sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+        .active, .accordion:hover {
+            background-color: #CCC;
+        }
+        .panel {
+            display: none;
+            background-color: #DDD;
+            overflow: hidden;
+            width: 800px;
+            outline: none;
+        }
+        .tab {
+            width: 800px;
+            background-color: #DDD;
+            overflow: hidden;
+            font-size: 13px;
+            float: left;
+        }    
+        .tab button {
+            width: 200px;
+            float: center;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 7px 2px;
+            font-family: sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .tab button:hover {
+            background-color: #CCC;
+        }
+        .tab button.active {
+            background-color: #777;
+        }
+        .tabcontent {
+            display: none;
+        }
+        .code {
+            padding: 0 20px;
+            font-family: monospace;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            color: #333;
+        }
+        .center {
+            width: 60%;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 10px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        li {
+            float: left;               
+        }
+        footer {
+            width: 800px;
+            float: center;
+            position: fixed;
+            bottom: 0;
+            background-color: #333;
+            color: #EEE;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="center">
+    <header>
+        <h2>COMANDOS PARA CONFIGURAÇÕES DE SISTEMAS PARA UBUNTU</h2>
+    </header>
+    <nav>
+        <div class="tab">
+            <ul>
+                <li>
+                    <button class="tablinks" onclick="openMenu(event, 'System')">SISTEMA<br/>OPERACIONAL</button>
+                </li>
+                <li>
+                    <button class="tablinks" onclick="openMenu(event, 'Developer')">SISTEMAS DE<br/>DESENVOLVIMENTO</button>    
+                </li>
+                <li>
+                    <button class="tablinks" onclick="openMenu(event, 'User')">SISTEMAS DE<br/>USO COMUM</button>
+                </li>
+                <li>
+                    <button class="tablinks" onclick="openMenu(event, 'Utility')">COMANDOS<br/>VIA TERMINAL</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="System" class="tabcontent">
+        <section>
+            <button class="accordion">ATUALIZAÇÃO DA LISTA DE PACOTES</button>
+            <div class="panel">
+                <p class="code" onclick="copyText(this)">sudo apt-get update</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DAS ATUALIZAÇÕES DE PACOTES</button>
+            <div class="panel">
+                <p class="code">sudo apt-get upgrade -f -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">REMOÇÃO DE PACOTES DESNECESSÁRIOS</button>
+            <div class="panel">
+                <p class="code">sudo apt-get autoremove -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">REMOÇÃO DE PACOTES OBSOLETOS</button>
+            <div class="panel">
+                <p class="code">sudo apt-get autoclean -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">REMOÇÃO DE PACOTES</button>
+            <div class="panel">
+                <p class="code">sudo apt-get clean -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DE PACOTES DE IDIOMAS</button>
+            <div class="panel">
+                <p class="code">sudo apt-get install language-pack-gnome-pt
+                <br/>sudo apt-get install language-pack-pt-base -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">ATUALIZAÇÃO DAS CONFIGURAÇÕES DE INICIALIZAÇÃO</button>
+            <div class="panel">
+                <p class="code">sudo update-initramfs -u</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DE CODECS MULTIMÍDIAS</button>
+            <div class="panel">
+                <p class="code">sudo apt install ubuntu-restricted-extras -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO UNITY TWEAK TOOL</button>
+            <div class="panel">
+                <p class="code">sudo apt install unity-tweak-tool -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO GNOME TWEAK TOOL</button>
+            <div class="panel">
+                <p class="code">sudo apt-get install gnome-tweak-tool -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO CLIENT URL</button>
+            <div class="panel">
+                <p class="code">sudo apt-get install curl -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO GRUB</button>
+            <div class="panel">
+                <p class="code">sudo grub-install /dev/sda</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">ATUALIZAÇÃO DO GRUB</button>
+            <div class="panel">
+                <p class="code">sudo update-grub
+                <br/>sudo update-grub2</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DE SISTEMAS DE COMPACTAÇÃO DE DADOS</button>
+            <div class="panel">
+                <p class="code">sudo apt-get install zip unzip -y                   
+                <br/>sudo apt-get install p7zip p7zip-full p7zip-rar -y
+                <br/>sudo apt-get install rar unrar-free -y
+                <br/>sudo apt-get install ark ncompress -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">SUPORTE PARA DRIVERS GRÁFICOS</button>
+            <div class="panel">
+                <p class="code">sudo apt-add-repository ppa:graphics-drivers/ppa -y
+                <br/>sudo apt-get update</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DE PACOTES ESSENCIAIS</button>
+            <div class="panel">
+                <p class="code">sudo apt install build-essential -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO LYNX</button>
+            <div class="panel">
+                <p class="code">sudo apt install lynx -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO BLEACHBIT</button>
+            <div class="panel">
+                <p class="code">sudo apt install bleachbit -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO GERENCIADOR DE PARTIÇÕES DE DISCO</button>
+            <div class="panel">
+                <p class="code">sudo apt install gparted -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO GRUB CUSTOMIZER</button>
+            <div class="panel">
+                <p class="code"><p class="code">sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
+                <br/>sudo apt-get update  
+                <br/>sudo apt-get install grub-customizer -y</p>
+            </div>
+        </section>
+        </div>
+    
+    <div id="Developer" class="tabcontent">
+        <section>
+            <button class="accordion">INSTALAÇÃO DO NOTEPAD++</button>
+            <div class="panel">
+                <p class="code">sudo snap install notepad-plus-plus</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO GIT</button>
+            <div class="panel">
+                <p class="code">sudo add-apt-repository ppa:git-core/ppa -y
+                <br/>sudo apt-get update
+                <br/>sudo apt install git -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">CONFIGURAÇÃO INICIAL DO GIT</button>
+            <div class="panel">
+                <p class="code">git config --global user.name "John Doe"
+                <br/>git config --global user.email johndoe@example.com
+                <br/>git config --global core.editor code
+                <br/>git config --list</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO MICROSOFT VISUAL STUDIO CODE</button>
+            <div class="panel">
+                <p class="code">curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+                <br/>sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+                <br/>sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+                <br/>sudo apt-get install apt-transport-https
+                <br/>sudo apt-get update
+                <br/>sudo apt-get install code -y || sudo apt-get install code-insiders -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO PYTHON</button>
+            <div class="panel">
+                <p class="code">sudo apt-get install python2.7 -y
+                <br/>sudo apt-get install python3.5 -y
+                <br/>sudo apt-get install python-pip -y
+                <br/>sudo apt-get install idle -y
+                <br/>sudo apt-get install idle3</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="User" class="tabcontent">
+        <section>
+            <button class="accordion">INSTALAÇÃO DO VLC MEDIA PLAYER</button>
+            <div class="panel">
+                <p class="code">sudo apt-get install vlc -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO GOOGLE CHROME</button>
+            <div class="panel">
+                <p class="code">sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+                <br/>wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+                <br/>sudo apt-get update
+                <br/>sudo apt-get install google-chrome-stable</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO MUSESCORE</button>
+            <div class="panel">
+                <p class="code">$sudo add-apt-repository ppa:mscore-ubuntu/mscore-stable -y
+                <br/>sudo apt-get update
+                <br/>sudo apt-get install musescore -y</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">INSTALAÇÃO DO TELEGRAM</button>
+            <div class="panel">
+                <p class="code">sudo add-apt-repository ppa:atareao/telegram
+                <br/>sudo apt-get update
+                <br/>sudo apt-get install telegram</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="Utility" class="tabcontent">
+        <section>
+            <button class="accordion">DESCRIÇÃO</button>
+            <div class="panel">
+                <p class="code">comando</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">DESCRIÇÃO</button>
+            <div class="panel">
+                <p class="code">comando</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">DESCRIÇÃO</button>
+            <div class="panel">
+                <p class="code">comando</p>
+            </div>
+        </section>
+        <section>
+            <button class="accordion">DESCRIÇÃO</button>
+            <div class="panel">
+                <p class="code">comando</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <!--p>Criado por <strong>Gustavo Siqueira</strong></p-->
+    </footer>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        function openMenu(evt, menuName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(menuName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
